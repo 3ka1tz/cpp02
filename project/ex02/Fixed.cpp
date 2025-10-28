@@ -24,20 +24,20 @@ Fixed& Fixed::operator=(const Fixed& other) {
 
 Fixed::~Fixed() {}
 
-float Fixed::toFloat() const {
-    return static_cast<float>(_value) / (1 << _fractionalBits);
-}
-
-int Fixed::toInt() const {
-    return (_value >> _fractionalBits);
-}
-
 int Fixed::getRawBits() const {
     return _value;
 }
 
 void Fixed::setRawBits(const int raw) {
     _value = raw;
+}
+
+float Fixed::toFloat() const {
+    return static_cast<float>(_value) / (1 << _fractionalBits);
+}
+
+int Fixed::toInt() const {
+    return (_value >> _fractionalBits);
 }
 
 bool Fixed::operator>(const Fixed& other) const {
@@ -118,7 +118,7 @@ const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
     return (a > b) ? a : b;
 }
 
-std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
-    out << fixed.toFloat();
-    return out;
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
+    os << fixed.toFloat();
+    return os;
 }
