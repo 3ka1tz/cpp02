@@ -4,3 +4,7 @@ Ad-hoc polymorphism, operator overloading and the [Orthodox Canonical class form
 ## EX00
 In this exercise we will need to create a class in Orthodox Canonical Form that represents a fixed-point number.
 
+## EX01
+
+## EX02
+
