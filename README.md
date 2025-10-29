@@ -1,10 +1,13 @@
 # CPP Module 02
 Ad-hoc polymorphism, operator overloading and the [Orthodox Canonical class form](https://riceset.com/C++/The-Orthodox-Canonical-Class-Form).
 
-## EX00
-In this exercise we will need to create a class in Orthodox Canonical Form that represents a fixed-point number.
+## Exercise 00: My First Class in Orthodox Canonical Form
+Create a class in Orthodox Canonical Form that represents a fixed-point number.
 
-## EX01
+## Exercise 01: Towards a more useful fixed-point number class
 
-## EX02
 
+## Exercise 02: Now we’re talking
+
+
+### Personal Recommendations
