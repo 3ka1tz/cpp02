@@ -4,7 +4,7 @@ Ad-hoc polymorphism, operator overloading and the [Orthodox Canonical class form
 ## Exercise 00: My First Class in Orthodox Canonical Form
 Create a class in Orthodox Canonical Form that represents a fixed-point number.
 
-## Exercise 01: Towards a more useful fixed-point number class
+## [Exercise 01: Towards a more useful fixed-point number class](https://github.com/3ka1tz/cpp02/tree/main/project/ex00)
 
 
 ## Exercise 02: Now we’re talking
