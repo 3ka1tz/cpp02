@@ -11,8 +11,8 @@ Create a class in Orthodox Canonical Form that represents a fixed-point number:
   - A copy constructor.
   - A copy assignment operator overload.
   - A destructor.
-  - A member function int getRawBits() const; that returns the raw value of the fixed-point value.
-  - A member function void setRawBits(int const raw); that sets the raw value of the fixed-point number.
+  - A member function `int getRawBits() const;` that returns the raw value of the fixed-point value.
+  - A member function `void setRawBits(int const raw);` that sets the raw value of the fixed-point number.
 
 ## [Exercise 01: Towards a more useful fixed-point number class](https://github.com/3ka1tz/cpp02/tree/main/project/ex01)
 
