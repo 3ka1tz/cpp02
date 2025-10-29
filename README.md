@@ -4,7 +4,7 @@ Ad-hoc polymorphism, operator overloading and the [Orthodox Canonical class form
 ## [Exercise 00: My First Class in Orthodox Canonical Form](https://github.com/3ka1tz/cpp02/tree/main/project/ex00)
 Create a class in Orthodox Canonical Form that represents a fixed-point number:
 • Private members:
-◦ An integer to store the fixed-point number value.
+- An integer to store the fixed-point number value.
 ◦ A static constant integer to store the number of fractional bits. Its value will always be the integer literal 8.
 • Public members:
 ◦ A default constructor that initializes the fixed-point number value to 0.
