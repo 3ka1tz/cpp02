@@ -45,6 +45,6 @@ private:
     static const int _fractionalBits = 8;
 };
 
-std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif

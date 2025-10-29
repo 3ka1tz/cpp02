@@ -3,21 +3,15 @@
 
 Fixed::Fixed() : _value(0) {}
 
-Fixed::Fixed(const int value) {
-    _value = value << _fractionalBits;
-}
+Fixed::Fixed(const int n) : _value(n << _fractionalBits) {}
 
-Fixed::Fixed(const float value) {
-    _value = roundf(value * (1 << _fractionalBits));
-}
+Fixed::Fixed(const float f) : _value(static_cast<int>(roundf(f * (1 << _fractionalBits)))) {}
 
-Fixed::Fixed(const Fixed& other) {
-    _value = other._value;
-}
+Fixed::Fixed(const Fixed& other) : _value(other._value) {}
 
 Fixed& Fixed::operator=(const Fixed& other) {
     if (this != &other) {
-        this->_value = other._value;
+        _value = other._value;
     }
     return *this;
 }
@@ -33,11 +27,11 @@ void Fixed::setRawBits(const int raw) {
 }
 
 float Fixed::toFloat() const {
-    return static_cast<float>(_value) / (1 << _fractionalBits);
+    return static_cast<float>(_value) / static_cast<float>(1 << _fractionalBits);
 }
 
 int Fixed::toInt() const {
-    return (_value >> _fractionalBits);
+    return _value >> _fractionalBits;
 }
 
 bool Fixed::operator>(const Fixed& other) const {
@@ -65,19 +59,30 @@ bool Fixed::operator!=(const Fixed& other) const {
 }
 
 Fixed Fixed::operator+(const Fixed& other) const {
-    return Fixed(this->toFloat() + other.toFloat());
+    Fixed result;
+    result.setRawBits(_value + other._value);
+    return result;
 }
 
 Fixed Fixed::operator-(const Fixed& other) const {
-    return Fixed(this->toFloat() - other.toFloat());
+    Fixed result;
+    result.setRawBits(_value - other._value);
+    return result;
 }
 
 Fixed Fixed::operator*(const Fixed& other) const {
-    return Fixed(this->toFloat() * other.toFloat());
+    Fixed result;
+    result.setRawBits((_value * other._value) >> _fractionalBits);
+    return result;
 }
 
 Fixed Fixed::operator/(const Fixed& other) const {
-    return Fixed(this->toFloat() / other.toFloat());
+    if (other._value == 0) {
+        throw std::runtime_error("Math Error");
+    }
+    Fixed result;
+    result.setRawBits((_value << _fractionalBits) / other._value);
+    return result;
 }
 
 Fixed& Fixed::operator++() {
